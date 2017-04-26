@@ -30,9 +30,13 @@ gulp.task('serve', ()=>{
 
 gulp.task('reload-js',['scripts'],browser.reload);
 gulp.task('reload-css',['css'],browser.reload);
+gulp.task('reload-html',['pages'],browser.reload);
+
 
 gulp.task('browser',(cb)=>{
   if(!args.watch) return cb();
   gulp.watch('app/**/*.js',['reload-js']);
   gulp.watch('app/**/*.css',['reload-css']);
+  gulp.watch('app/**/*.html',['reload-html']);
+
 });
